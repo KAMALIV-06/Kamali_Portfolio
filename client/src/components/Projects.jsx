@@ -105,7 +105,7 @@ const Projects = () => {
             </div>
           </div>
           <div className="featured-visual" aria-hidden="true">
-            <div className="visual-screenshot">Screenshot</div>
+            <div className="visual-screenshot">Project</div>
           </div>
         </div>
 

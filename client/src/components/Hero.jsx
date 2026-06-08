@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Hero.css";
+import profilePhoto from "../assets/profile.jpeg";
 
 const roles = ["Full Stack Developer", "ML Enthusiast", "IT Student"];
 
 const Hero = () => {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <section id="home" className="section hero-section">
       <div className="container hero-grid">
@@ -26,16 +29,25 @@ const Hero = () => {
           </div>
 
           <div className="hero-socials">
-            <a href="#" aria-label="GitHub">GitHub</a>
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
-            <a href="mailto:kamali@example.com" aria-label="Email">Email</a>
+            <a href="https://github.com/KAMALIV-06" aria-label="GitHub">GitHub</a>
+            <a href="https://www.linkedin.com/in/kamali-v-357b9728a/" aria-label="LinkedIn">LinkedIn</a>
+            <a href="mailto:kamaliv2006@gmail.com" aria-label="Email">Email</a>
           </div>
         </div>
 
         <div className="hero-visual reveal">
           <div className="visual-glow" />
           <div className="visual-frame">
-            <div className="visual-photo" aria-hidden="true" />
+            {imageError ? (
+              <div className="visual-photo visual-placeholder">KV</div>
+            ) : (
+              <img
+                src={profilePhoto}
+                alt="Kamali V"
+                className="visual-photo"
+                onError={() => setImageError(true)}
+              />
+            )}
           </div>
           <div className="visual-shape shape-one" />
           <div className="visual-shape shape-two" />

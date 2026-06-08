@@ -25,15 +25,15 @@ const Contact = () => {
           <div className="contact-details">
             <div>
               <strong>Email</strong>
-              <p>kamali@example.com</p>
+              <p>kamaliv2006@gmail.com</p>
             </div>
             <div>
               <strong>LinkedIn</strong>
-              <p>linkedin.com/in/kamali-v</p>
+              <p>https://www.linkedin.com/in/kamali-v-357b9728a/</p>
             </div>
             <div>
               <strong>GitHub</strong>
-              <p>github.com/kamali-v</p>
+              <p>https://github.com/KAMALIV-06</p>
             </div>
           </div>
         </div>
