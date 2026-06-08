@@ -7,15 +7,17 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+const profileRoutes = require("./routes/profileRoutes");
+const projectRoutes = require("./routes/projectRoutes");
+const skillsRoutes = require("./routes/skillsRoutes");
+
 app.get("/", (req, res) => {
-  res.send("Portfolio Backend Running Successfully");
+  res.send("Portfolio API Running");
 });
 
-app.get("/api/test", (req, res) => {
-  res.json({
-    message: "API Working Successfully",
-  });
-});
+app.use("/api/profile", profileRoutes);
+app.use("/api/projects", projectRoutes);
+app.use("/api/skills", skillsRoutes);
 
 const PORT = process.env.PORT || 5000;
 

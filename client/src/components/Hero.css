@@ -1,0 +1,10 @@
+.hero{min-height:80vh;display:flex;align-items:center}
+.hero-inner{max-width:760px;padding:48px}
+.hero h2{color:var(--muted);margin-bottom:8px}
+.hero h1{font-size:clamp(2.2rem,6vw,4rem);margin-bottom:12px;line-height:1}
+.hero .muted{color:var(--muted);margin-bottom:26px}
+
+.hero-cta{display:flex;gap:14px}
+.btn-primary{display:inline-block;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#04040a;font-weight:600;box-shadow:0 10px 30px rgba(124,58,237,0.12);transition:var(--transition)}
+.btn-primary:hover{transform:translateY(-4px)}
+.btn-ghost{display:inline-block;padding:12px 18px;border-radius:10px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent);}

@@ -1,0 +1,23 @@
+.navbar{position:sticky;top:16px;z-index:40;padding:12px 0;transition:var(--transition)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between}
+.navbar.nav--scrolled{box-shadow:0 6px 30px rgba(2,6,23,0.6)}
+.brand{display:flex;flex-direction:column;color:var(--accent-2);font-weight:700}
+.brand .name{font-size:1.05rem}
+.brand .role{font-size:0.65rem;color:var(--muted);margin-top:2px}
+
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{padding:8px 14px;border-radius:10px;transition:var(--transition);color:inherit}
+.nav-links a:hover{background:linear-gradient(90deg,rgba(124,58,237,0.12),rgba(110,231,183,0.06));transform:translateY(-3px)}
+.nav-links a.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#05060a;padding:8px 12px}
+
+.hamburger{display:none;width:44px;height:36px;background:transparent;border-radius:8px;align-items:center;justify-content:center}
+.hamburger span{display:block;height:3px;background:#cfeef5;margin:5px 10px;border-radius:10px;transition:var(--transition)}
+.hamburger.is-active span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.hamburger.is-active span:nth-child(2){opacity:0}
+.hamburger.is-active span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+@media (max-width:880px){
+  .hamburger{display:flex}
+  .nav-links{position:fixed;right:18px;top:72px;background:var(--panel);padding:16px;border-radius:12px;flex-direction:column;backdrop-filter:blur(8px);display:none}
+  .nav-links.open{display:flex}
+}
