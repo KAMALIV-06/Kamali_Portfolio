@@ -1,5 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
+
+const navItems = [
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -12,26 +21,24 @@ const Navbar = () => {
   }, []);
 
   return (
-    <header className={`navbar glass ${scrolled ? "nav--scrolled" : ""}`}>
-      <div className="container nav-inner">
+    <header className={`navbar glass ${scrolled ? "navbar-scrolled" : ""}`}>
+      <div className="container nav-row">
         <a href="#home" className="brand">
-          <span className="name">Kamali V</span>
-          <small className="role">Full Stack Developer</small>
+          <span>Kamali V</span>
         </a>
 
-        <nav className={`nav-links ${open ? "open" : ""}`}>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#education">Education</a>
-          <a href="#contact" className="cta">Contact</a>
+        <nav className={`nav-menu ${open ? "open" : ""}`}>
+          {navItems.map((item) => (
+            <a key={item.href} href={item.href} onClick={() => setOpen(false)}>
+              {item.label}
+            </a>
+          ))}
         </nav>
 
         <button
-          className={`hamburger ${open ? "is-active" : ""}`}
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Menu"
+          className={`burger ${open ? "active" : ""}`}
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle navigation"
         >
           <span />
           <span />

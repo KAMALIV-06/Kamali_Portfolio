@@ -1,29 +1,75 @@
 import React from "react";
 import "./About.css";
 
+const education = [
+  {
+    title: "R.M.K. Engineering College",
+    subtitle: "B.Tech Information Technology",
+    date: "2023 - 2027",
+    detail: "CGPA: 8.48",
+  },
+  {
+    title: "R.M.K. Matric Hr. Sec School",
+    subtitle: "Higher Secondary",
+    date: "2023",
+    detail: "87.8%",
+  },
+];
+
 const About = () => {
   return (
-    <section id="about" className="section">
-      <div className="container about-inner grid--2">
-        <div className="about-card glass">
-          <div className="profile-pic" aria-hidden>
-            {/* Placeholder circle */}
+    <section id="about" className="section about-section">
+      <div className="container about-grid">
+        <div className="about-panel glass reveal">
+          <div className="section-title">
+            <span className="eyebrow">Academic Journey</span>
+            <h2>Education Timeline</h2>
+          </div>
+
+          <div className="timeline">
+            {education.map((item) => (
+              <div className="timeline-item" key={item.title}>
+                <div className="timeline-marker" />
+                <div>
+                  <h3>{item.title}</h3>
+                  <p className="muted">{item.subtitle}</p>
+                  <p className="timeline-date">{item.date}</p>
+                  <p className="timeline-detail">{item.detail}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="about-content">
-          <h2>About Me</h2>
-          <h3 className="muted">Passionate engineering student focused on full-stack and ML.</h3>
+        <div className="about-copy glass reveal">
+          <div className="section-title">
+            <span className="eyebrow">About Me</span>
+            <h2>Building practical systems with long-term impact</h2>
+          </div>
           <p>
-            I am an engineering student with experience building web applications and
-            experimenting with machine learning models. I enjoy turning ideas into
-            polished products and learning new tools to solve real-world problems.
+            I focus on crafting engineering solutions that blend production-ready full-stack
+            systems with data-driven machine learning models. I enjoy exploring new
+            algorithms while keeping user experience and reliability at the forefront.
           </p>
           <p>
-            I actively work with Java, Python, JavaScript, and modern web stacks.
-            I'm seeking opportunities to contribute to impactful projects and grow as an
-            engineer.
+            My work centers on solving real problems: automating workflows, creating
+            observability for systems, and building tools that empower teams and users.
           </p>
+
+          <div className="about-highlights">
+            <div className="highlight-card">
+              <strong>Curious technologist</strong>
+              <span>Always experimenting with new stacks, APIs, and ML pipelines.</span>
+            </div>
+            <div className="highlight-card">
+              <strong>Problem solver</strong>
+              <span>Building clean, scalable systems for engineering and research needs.</span>
+            </div>
+            <div className="highlight-card">
+              <strong>Impact-driven</strong>
+              <span>Delivering solutions that are measurable, reliable, and reusable.</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
